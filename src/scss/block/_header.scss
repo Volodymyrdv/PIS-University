@@ -1,0 +1,35 @@
+.header {
+	background-color: $header;
+}
+
+.row-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.search-form {
+	display: flex;
+	align-items: center;
+	column-gap: 1.7em;
+}
+.search {
+	background-color: $search;
+	border-radius: 20px;
+}
+.search-input {
+	padding: 0 40px;
+}
+.search-button {
+	background-color: $button-search;
+	color: $white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 20px;
+}
+.user-logo {
+	color: white;
+	padding: 15px 20px;
+	background-color: $user-logo;
+	border-radius: 100%;
+}

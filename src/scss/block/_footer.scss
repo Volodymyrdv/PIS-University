@@ -1,0 +1,21 @@
+.footer {
+	background-color: $footer;
+	padding: 25px 0;
+	font-family: $font-family-inknut;
+}
+
+.footer-about {
+	color: $white;
+}
+.footer-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.footer-media {
+	display: flex;
+	column-gap: 28px;
+}
+.footer-text {
+	color: $white;
+}
