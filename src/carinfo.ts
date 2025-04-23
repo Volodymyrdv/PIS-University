@@ -10,6 +10,8 @@ import { API_URL, API_KEY } from './../env';
 document.addEventListener('DOMContentLoaded', async () => {
 	const form = document.querySelector('.form') as HTMLFormElement;
 	const carId = new URLSearchParams(window.location.search).get('id');
+	const searchForm = document.querySelector('.search-form') as HTMLFormElement;
+	searchForm.classList.add('hidden');
 
 	if (!carId) return;
 

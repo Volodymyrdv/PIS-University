@@ -4,6 +4,8 @@ import { BookedCar } from './interfaces/BookedCar';
 
 const bookedCarData: BookedCar[] = [];
 const bookedCarCardsContainer = document.querySelector('.car-cards_car');
+const searchForm = document.querySelector('.search-form') as HTMLFormElement;
+searchForm.classList.add('hidden');
 
 const loadData = async () => {
 	const response = await fetch(API_URL, {

@@ -1,11 +1,12 @@
 .main {
+	min-height: 80vh;
 	padding: 2.5em 0;
 }
 .car-cards {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	gap: 2.5em;
+	justify-content: flex-start;
 }
 .card_wrapper {
 	min-width: 220px;

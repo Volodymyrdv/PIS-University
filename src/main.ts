@@ -57,4 +57,24 @@ const renderCarCards = (cars: Car[]) => {
 	});
 };
 
+const filterCars = (e: any) => {
+	const carListItem = document.querySelectorAll('.card_wrapper');
+	if (e.target.value.length === 0) {
+		carListItem.forEach((item) => {
+			item.classList.remove('hidden');
+		});
+		return;
+	}
+	carListItem.forEach((item) => {
+		const title = item.querySelector('.card_title');
+		if (title?.textContent?.startsWith(e.target.value)) {
+			item.classList.remove('hidden');
+		} else {
+			item.classList.add('hidden');
+		}
+	});
+	console.log(e.target.value);
+};
+
 loadData();
+document.querySelector('.search-input')?.addEventListener('keyup', filterCars);

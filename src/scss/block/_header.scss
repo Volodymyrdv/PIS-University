@@ -14,11 +14,11 @@
 	column-gap: 1.7em;
 }
 .search {
-	background-color: $search;
-	border-radius: 20px;
 }
 .search-input {
-	padding: 0 40px;
+	background-color: $search;
+	border-radius: 20px;
+	padding: 10px 40px;
 }
 .search-button {
 	background-color: $button-search;
