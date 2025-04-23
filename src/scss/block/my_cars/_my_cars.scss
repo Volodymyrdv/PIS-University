@@ -1,0 +1,37 @@
+.my_cars {
+	min-height: 80vh;
+	padding: 2.5em 0;
+}
+
+.car-cards_car {
+	display: flex;
+	flex-wrap: wrap;
+	// justify-content: center;
+	gap: 2.4em;
+}
+
+.card_wrapper_car {
+	min-width: 230px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $background_card;
+	padding-top: 1.3em;
+	padding-bottom: 0.6em;
+	border-radius: 30px;
+	border: 3px solid $black;
+}
+
+.card_date_start {
+	font-size: 0.75em;
+	color: green;
+}
+.card_date_end {
+	font-size: 0.75em;
+	color: red;
+}
+.card_cost_for_book {
+	font-size: 0.75em;
+	font-weight: 700;
+}

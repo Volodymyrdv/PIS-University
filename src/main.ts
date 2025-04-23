@@ -1,26 +1,19 @@
 import './scss/main.scss';
-
-export interface Car {
-	id: number;
-	car_model: string;
-	car_name: string;
-	car_price: number;
-	car_color: string;
-	car_description: string;
-	car_view_img: string;
-	car_full_img: string;
-	dates_bookest: any[];
-}
+import { API_URL, API_KEY } from './../env';
+import { Car } from './interfaces/Car';
 
 const carData: Car[] = [];
-const API_URL = 'https://api.jsonbin.io/v3/b/6803948c8960c979a58896d5';
-
 const carCardsContainer = document.querySelector('.car-cards');
 
 const loadData = async () => {
-	const response = await fetch(API_URL);
+	const response = await fetch(API_URL, {
+		headers: {
+			'X-Master-Key': API_KEY,
+			'Content-Type': 'application/json'
+		}
+	});
 	const result = await response.json();
-	const records = result.record;
+	const records = result.record.records;
 	carData.push(...records);
 	renderCarCards(carData);
 };
