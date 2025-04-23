@@ -1,13 +1,23 @@
 .main {
 	min-height: 80vh;
-	padding: 2.5em 0;
+	padding: 2em 0;
 }
+
+.filter {
+	color: $black;
+	display: inline-flex;
+	margin-bottom: 1.5em;
+	background-color: $white;
+	border-radius: 20px;
+}
+
 .car-cards {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2.5em;
-	justify-content: flex-start;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1.5em;
+	justify-items: center;
 }
+
 .card_wrapper {
 	min-width: 220px;
 	display: flex;

@@ -57,24 +57,20 @@ const renderCarCards = (cars: Car[]) => {
 	});
 };
 
-const filterCars = (e: any) => {
-	const carListItem = document.querySelectorAll('.card_wrapper');
-	if (e.target.value.length === 0) {
-		carListItem.forEach((item) => {
-			item.classList.remove('hidden');
-		});
-		return;
-	}
-	carListItem.forEach((item) => {
-		const title = item.querySelector('.card_title');
-		if (title?.textContent?.startsWith(e.target.value)) {
-			item.classList.remove('hidden');
-		} else {
-			item.classList.add('hidden');
-		}
+const applyFilters = () => {
+	const searchValue = (
+		document.querySelector('.search-input') as HTMLInputElement
+	)?.value.toLowerCase();
+	const selectedBrand = (document.querySelector('#brand') as HTMLSelectElement)?.value;
+	const filteredCars = carData.filter((car) => {
+		const matchesSearch = !searchValue || car.car_model.toLowerCase().startsWith(searchValue);
+		const matchesBrand = !selectedBrand || car.car_name === selectedBrand;
+		return matchesSearch && matchesBrand;
 	});
-	console.log(e.target.value);
+
+	renderCarCards(filteredCars);
 };
 
 loadData();
-document.querySelector('.search-input')?.addEventListener('keyup', filterCars);
+document.querySelector('.search-input')?.addEventListener('keyup', applyFilters);
+document.querySelector('#brand')?.addEventListener('change', applyFilters);

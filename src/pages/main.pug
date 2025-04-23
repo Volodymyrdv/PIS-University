@@ -1,5 +1,10 @@
 main.main
-	.container
-		.car-cards
-			
-
+  .container
+    .filter
+      h3.filter-title Фільтр до типу машини:
+      select.filter-brand#brand
+        option(value='') Усі
+        option(value='Mercedes') Mercedes
+        option(value='Toyota') Toyota
+		
+    .car-cards
